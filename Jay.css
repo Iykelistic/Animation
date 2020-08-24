@@ -1,0 +1,219 @@
+:root {
+    --shadow: #061729;
+    --color-1: #e300abff;
+    --color-2: #1be7ffff;
+    --color-3: #f4d35eff;
+    --color-4: #c6c7f4;
+    --color-5: #ffd25aff; 
+}
+
+$background: #dae9fa;
+$textcolor: #5362F6;
+$shadow: #eee;
+
+@function textShadow($precision, $size, $color){
+    $value: null;
+    $offset: 0;
+    $length :$size*(1/$precision)-1;
+    
+    @for $i from 0 through $length{
+        $offset: $offset + $precision;
+        $shadow: $offset + px $offset+ px $color;
+        $value: append($value, $shadow, comma);
+    }
+    @ return $value;
+}
+
+body{
+    background: $background;
+}
+
+.scatter span{
+    position: relative;
+    text-shadow: textShadow(0.25, 8, var(--shadow));
+    animation: scatter 2s infinite;
+}
+
+.scatter span:nth-child(0){
+    animation-delay: 0.3s;
+}
+.scatter span:nth-child(1){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(2){
+    animation-delay: 0.35s;
+}
+.scatter span:nth-child(3){
+    animation-delay: 0.25s
+}
+.scatter span:nth-child(4){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(5){
+    animation-delay: 0.35s;
+}
+.scatter span:nth-child(6){
+    animation-delay: 0.3s;
+}
+.scatter span:nth-child(7){
+    animation-delay: 0.25s;
+}
+.scatter span:nth-child(8){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(9){
+    animation-delay: 0.25s;
+}
+.scatter span:nth-child(10){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(11){
+    animation-delay: 0.3s;
+}
+.scatter span:nth-child(12){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(13){
+    animation-delay: 0.25s;
+}
+.scatter span:nth-child(14){
+    animation-delay: 0.35s;
+}
+.scatter span:nth-child(15){
+    animation-delay: 0.3s;
+}
+.scatter span:nth-child(16){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(17){
+    animation-delay: 0.25s;
+}
+/*.scatter span:nth-child(19){
+    animation-delay: 0.15s;
+}
+.scatter span:nth-child(20){
+    animation-delay: 0.35s;
+}*/
+
+
+h1{
+    letter-spacing: 0.3rem;
+    margin: 150px auto;
+    margin: calc(30vh -4rem) auto;
+    text-align: center;
+    font-family: 'Eczar', serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 4.7rem;
+    color: #e94a4b;
+}
+
+/*h1 span:nth-child(2n){
+    color: var(--color-1);
+}
+h1 span:nth-child(3n){
+    color: var(--color-2);
+}
+h1 span:nth-child(5n){
+    color: var(--color-3);
+}
+
+h1 span:nth-child(7n), h1 span:nth-child(12n){
+    color: var(--color-4);
+}*/
+
+h1 span:nth-child(0){
+    color: var(--color-1);
+}
+h1 span:nth-child(1){
+    color: var(--color-2);
+}
+h1 span:nth-child(2){
+    color: var(--color-3);
+}
+h1 span:nth-child(3){
+    color: var(--color-4);
+}
+h1 span:nth-child(4){
+    color: var(--color-5);
+}
+h1 span:nth-child(5){
+    color: var(--color-4);
+}
+
+h1 span:nth-child(6){
+    color: var(--color-3);
+}
+
+h1 span:nth-child(7){
+    color: var(--color-1);
+}
+
+h1 span:nth-child(8){
+    color: var(--color-2);
+}
+
+h1 span:nth-child(9){
+    color: var(--color-3);
+}
+
+h1 span:nth-child(10){
+    color: var(--color-4);
+}
+
+h1 span:nth-child(11){
+    color: var(--color-5);
+}
+
+h1 span:nth-child(12){
+    color: var(--color-1);
+}
+
+h1 span:nth-child(13){
+    color: var(--color-2);
+}
+
+h1 span:nth-child(14){
+    color: var(--color-3);
+}
+
+h1 span:nth-child(15){
+    color: var(--color-4);
+}
+
+h1 span:nth-child(16){
+    color: var(--color-3);
+}
+
+h1 span:nth-child(17){
+    color: var(--shadow);
+}
+
+/*h1 span:nth-child(19){
+    color: var(--color-1);
+}
+
+h1 span:nth-child(20){
+    color: var(--color-3);
+}*/
+
+@keyframes scatter{
+    0%{
+        top: 0;
+    }
+    25%{
+        top: -50px;
+    }
+    50%{
+        top: -20px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 760px){
+    h1{
+        margin: calc(50vh -7rem) auto;
+    }
+}
